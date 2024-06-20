@@ -1,0 +1,36 @@
+1. Data Dive (10 pts):
+CREATE DATABASE SocialMediaUsage;
+      Imported “Average Time Spent By A User On Social Media.csv”
+      Difficulties:
+      The dataset is too large and intimidating for a beginner.
+      Interesting Observation:
+The dataset covers diverse demographics, including non-binary gender representation and various professions, which can provide insights into social media usage patterns across different societal segments.
+2. Data Fun (20 pts):
+i. Total time spent on each platform:
+
+SELECT platform, SUM(time_spent) as total_time_spent
+FROM `average time spent by a user on social media`
+GROUP BY platform;
+
+ii. Average time spent by users in different professions:
+
+SELECT profession, AVG(time_spent) as avg_time_spent
+FROM `average time spent by a user on social media`
+GROUP BY profession;
+
+3. Ask Away (30 pts):
+i. Which gender spends the most time on social media?
+
+SELECT gender, SUM(time_spent) as total_time_spent
+FROM `average time spent by a user on social media`
+GROUP BY gender
+ORDER BY total_time_spent DESC;
+
+ii. Which profession has the highest average income?
+
+SELECT profession, AVG(income) as avg_income
+FROM UserActivity
+GROUP BY profession
+ORDER BY avg_income DESC;
+
+
